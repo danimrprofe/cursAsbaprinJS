@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Se declaren amb var, i es substitueix posteriorment per let i const
+        //Es manté per retrocompatibilitat
+        var prova = "prova"
+        var a = null;
+        var b; //no definit
+        var c = false;
+        var d = 4;
+        var e = 5.6;
+        var f = "Null es un tipus i undefined un altre";
+
+        // objecte
+        var g = {
+            nom: 'Daniel',
+            cognoms: 'Moreno'
+
+        }
+        // Les variables poden canviar de tipus
+        g = 4;
+
+        //Mala pràctica. Provoca hoisting. Definir amb var, let, const
+        z = 99;
+        adeu = "adeu";
+
+        console.log(typeof (adeu));
+    </script>
+</body>
+
+</html>

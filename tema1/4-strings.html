@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var x = "Hola";
+        var y = 'Hola';
+        var z = `hola`;
+
+        var concatenar = "Hola que" + "tal?";
+        var z = "h\"ola";
+        var zz = '\'ola';
+
+        //operacions o funcions sobre strings
+
+        console.log(x.length); //tamany
+        console.log(x.charAt(0), x[0]) //posició 0;
+        console.log(x.substring(1, 2)); //posició 1 a 2;
+
+        //Reemplaçar lletres
+        console.log(x.replace("o", "p")); //reemplaçar
+
+        //Cercar posició
+        x.replaceAll(x.indexOf("ol")); //Si no es troba retorna -1
+
+        //Cercar si es troba (true o false)
+        console.log(x.includes("ol"));
+        console.log(x.toUpperCase());
+        console.log(x.toLowerCase());
+    </script>
+</body>
+
+</html>

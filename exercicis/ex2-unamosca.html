@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="cancion">Escriu una cançó:</label>
+        <input type="text" name="cancion" id="cancion">
+        <label for="vocales">Selecciona una vocal:</label>
+        <select id="vocales">
+            <option value="a">A</option>
+            <option value="e">E</option>
+            <option value="i">I</option>
+            <option value="o">O</option>
+            <option value="u">U</option>
+        </select>
+        <button onclick="canviavocales()">Traducir</button>
+        <br>
+        <label for="cancion">Cançó traduïda:</label>
+        <input type="text" name="cancion" id="canciontraducida">
+    </form>
+    <script>
+        function canviavocales() {
+
+            var cancion = document.getElementById("cancion").value;
+            var traduccion = "";
+            var vocales = ['a', 'e', 'i', 'o', 'u'];
+            for (var letra of cancion) {
+                if (vocales.includes(letra)) {
+                    traduccion += 'a';
+                }
+                else {
+                    traduccion += letra;
+                }
+            }
+            document.getElementById("canciontraducida").value = traduccion;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calcularTasques(persones, tasques, setmanes) {
+            var resultat = [];
+            for (var i = 0; i < setmanes; i++) {
+                var parcial = 'Setmana ' + (i + 1) + " | ";
+                for (var j = 0; j < tasques.length; j++) {
+                    if (tasques[j] != 'descans') {
+                        parcial += tasques[j] + persones[(i + j) % tasques.length] + ' | ';
+                    }
+                }
+
+                resultat.push(parcial)
+            }
+            return resultat;
+        }
+
+        var familia = ['pare', 'mare', 'fill', 'filla']
+        var tasques = ['rentadora', 'cuina', 'neteja', 'descans']
+
+        //TASQUES
+
+        var repartiment = calcularTasques(familia, tasques, 52);
+
+        //RESULTAT
+        console.log("TASQUES FAMILIA MORENO")
+        for (var i = 0; i < repartiment.length; i++) {
+            console.log(repartiment[i]);
+        }
+    </script>
+</body>
+
+</html>

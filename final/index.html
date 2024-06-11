@@ -4,24 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Restaurant Can Dani</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
+    <header>
+        <h1>Restaurant Can Dani</h1>
+        <h2>Editor del Bloc</h2>
+    </header>
 
-    <script src="https://accounts.google.com/gsi/client" async defer>
-    </script>
+    <main>
+        <img src="img/sobera.png" width="300px" alt="">
+        <p>Per a poder gestionar el bloc, hauràs d'autenticar-te amb un compte de google.</p>
 
-    <script src="funcionsblogger.js">
+        <p>Una vegada t'hagis autenticat, ja podràs accedir a les entrades.</p>
+        <img onclick="initGoogle()" src="img/accedir.png" alt="">
 
-    </script>
-    <h1>Restaurant Can Dani</h1>
-    <p>Per a poder gestionar el bloc, hauràs d'autenticar-te amb un compte de google.</p>
-    <button onclick="initGoogle()">Entra amb google</button>
-    <p>Una vegada t'hagis autenticat, ja podràs accedir al blog.</p>
+    </main>
 
-    <button id="llegirEntrades" onclick="window.location.href='entrades.html'">Llegir entrades</button>
-
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="funcionsblogger.js"></script>
 </body>
 
 </html>

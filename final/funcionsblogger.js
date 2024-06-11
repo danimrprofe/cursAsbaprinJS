@@ -4,8 +4,9 @@ function initGoogle() {
         scope: 'https://www.googleapis.com/auth/blogger',
         callback: (tokenResponse) => {
             if (tokenResponse && tokenResponse.access_token) {
-                console.log(tokenResponse, tokenResponse.access_token)
-                localStorage.setItem("token", tokenResponse.access_token)
+                console.log(tokenResponse, tokenResponse.access_token);
+                localStorage.setItem("token", tokenResponse.access_token);
+                window.location.href = "entrades.html";
             }
         },
     });
@@ -115,23 +116,7 @@ function leerEntrada(id) {
         })
         .then(data => {
             // Crear el formulario
-            const form = document.createElement('form');
-            form.id = 'entradaForm';
-            form.innerHTML = `
-            <label for="titol">Título:</label>
-            <input type="text" id="titol" name="titol"><br>
-            <label for="contingut">Contenido:</label>
-            <textarea id="contingut" name="contingut"></textarea><br>
-            <label for="contingutAngles">Traducció:</label>
-            <textarea id="contingutAngles" name="contingut"></textarea><br>
-            <label for="fecha">Fecha:</label>
-            <input type="text" id="data" name="data" disabled><br>
-            <input type="hidden" id="id" name="id">
-            <button type="button" onclick="guardarEntrada()">Guardar</button>
-        `;
-
-            // Insertar el formulario en el documento
-            document.body.appendChild(form);
+            const form = document.getElementById('entradaForm');
 
             // Rellenar el formulario con la información de la entrada
             form.querySelector('#titol').value = data.title;

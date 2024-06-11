@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../main.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Javascript</h1>
+    </header>
+    <section>
+
+        <nav>
+            <h2>Temes</h2>
+            <ul>
+                <li><a href="../tema1/">Tema 1</a></li>
+                <li><a href="../tema2/">Tema 2</a></li>
+                <li><a href="../tema3/">Tema 3</a></li>
+            </ul>
+        </nav>
+
+        <article>
+
+            <h2>DOM</h2>
+            <p>La següent taula ha estat generada amb Javascript modificant el DOM</p>
+            <div id="app">
+
+            </div>
+            <script>
+                function Marca(nom) {
+                    this.nom = nom;
+                }
+                function Model(marca, nom) {
+                    this.marca = marca;
+                    this.nom = nom;
+                }
+
+                var ford = new Marca("Ford");
+                var citroen = new Marca("Citroen");
+
+                var focus = new Model(ford, "Focus");
+                var fiesta = new Model(ford, "Fiesta");
+
+                var cotxes = [focus, fiesta];
+
+                var taula = document.createElement("TABLE");
+                taula.id = "cotxes";
+
+                var trHeader = document.createElement("TR");
+                taula.appendChild(trHeader);
+
+                var th = document.createElement("TH");
+                th.innerHTML = "Marca";
+                trHeader.appendChild(th);
+
+                var th2 = document.createElement("TH");
+                th2.innerHTML = "Model";
+                trHeader.appendChild(th2);
+
+                for (var i = 0; i < cotxes.length; i++) {
+                    var trModel = document.createElement("TR");
+                    taula.appendChild(trModel);
+
+                    var tdMarca = document.createElement("TD");
+                    tdMarca.innerHTML = cotxes[i].marca.nom;
+                    trModel.appendChild(tdMarca);
+
+                    var tdModel = document.createElement("TD");
+                    tdModel.innerHTML = cotxes[i].nom;
+                    trModel.appendChild(tdModel);
+                }
+
+                //aquí afegim la taula
+                document.querySelector("#app").appendChild(taula);
+
+                //seleccionam taula i afegim estils
+                document.querySelector("#cotxes").style.backgroundColor = "yellow";
+
+                //Seleccionam el tercer tr segona columna
+                document.querySelector("#cotxes>tr:nth-child(3) >td:nth-child(2)").innerHTML = "<strong>FIESHTA</strong>"
+
+            </script>
+        </article>
+
+    </section>
+    <footer>
+        <p>Footer</p>
+    </footer>
+</body>
+
+</html>

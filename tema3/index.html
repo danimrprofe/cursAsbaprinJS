@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../main.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Javascript</h1>
+    </header>
+    <section>
+
+        <nav>
+            <h2>Temes</h2>
+            <ul>
+                <li>Tema 3</li>
+            </ul>
+        </nav>
+
+        <article>
+
+            <h1>Tema 3</h1>
+            <h2>Callbacks</h2>
+            <p>Utilitzant callbacks passam una función com a paràmetre</p>
+            <button onclick="pintar('Dani', false)">Saludar (pintar true)</button>
+            <button onclick="pintar('Dani', false)">Despedir (pintar fals)</button>
+            <button onclick="pintar2('Ana', saludar)">Saludar amb callbacks</button>
+            <script src="assets/js/callbacks.js"></script>
+
+            </script>
+            <h2>Esdeveniments</h2>
+            <p>
+                Accions que passen quan hi ha una conteixement i se dispara una acció. No podem posar onclick on
+                vulguem.
+            </p>
+            <button onclick="randomColor()">Color aleatori de fons</button>
+            <label id="colorActual"></label>
+            <p>Color proporcionant valors en inputs</p>
+            <label for="r">Red</label>
+            <input id="r">
+            <label for="g">Green</label>
+            <input id="g">
+            <label for="b">Blue</label>
+            <input id="b">
+
+            <p>Ara el mateix, però utilitzant selectors: </p>
+            <select id="selector">
+                <option value="yellow">Groc</option>
+                <option value="orange">Taronja</option>
+                <option value="red">Vermell</option>
+            </select>
+            <script>
+
+                document.querySelector("select").addEventListener('change', function () {
+                    document.querySelector("body").style.backgroundColor = document.querySelector('#selector').value;
+
+                })
+
+                //minuto 15
+                function pintarFons(r, g, b) {
+                    var rParsed = parseInt(r);
+                    var gParsed = parseInt(g);
+                    var bParsed = parseInt(b);
+
+                    if (isNaN(rParsed)) {
+                        rParsed = 0;
+                    }
+                    if (isNaN(gParsed)) {
+                        gParsed = 0;
+                    }
+
+                    if (isNaN(bParsed)) {
+                        bParsed = 0;
+                    }
+                    document.querySelector("body").style.backgroundColor = 'rgb(' + rParsed + ',' + gParsed + ',' + bParsed + ')';
+
+                }
+
+                //Al fer clic a l'input, canviaré el fons
+                document.querySelector("#r").addEventListener('input', function () {
+                    var r = document.querySelector("#r").value;
+                    var g = document.querySelector("#g").value;
+                    var b = document.querySelector("#b").value;
+
+                    pintarFons(r, g, b);
+                });
+                //Al fer clic a l'input, canviaré el fons
+                document.querySelector("#g").addEventListener('input', function () {
+                    var r = document.querySelector("#r").value;
+                    var g = document.querySelector("#g").value;
+                    var b = document.querySelector("#b").value;
+
+                    pintarFons(r, g, b);
+                });
+                //Al fer clic a l'input, canviaré el fons
+                document.querySelector("#b").addEventListener('input', function () {
+                    var r = document.querySelector("#r").value;
+                    var g = document.querySelector("#g").value;
+                    var b = document.querySelector("#b").value;
+
+                    pintarFons(r, g, b);
+                });
+
+                function randomInt(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1) + min);
+                }
+                function randomColor() {
+                    var r = randomInt(0, 255);
+                    var g = randomInt(0, 255);
+                    var b = randomInt(0, 255);
+
+                    document.querySelector("body").style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+                }
+            </script>
+        </article>
+
+    </section>
+    <footer>
+        <p>Footer</p>
+    </footer>
+</body>
+
+</html>

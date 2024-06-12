@@ -30,7 +30,7 @@
         <a href="crear.html">Nova entrada</a>
     </nav>
     <main>
-        <h1>Editar entrada</h1>
+        <h1>Crear una entrada nova</h1>
         <article>
             <form id="entradaForm">
                 <label for="titol">Título:</label>
@@ -39,10 +39,9 @@
                 <textarea id="contingut" name="contingut" rows="10"></textarea><br>
                 <label for="contingutAngles">Recepta (anglès):</label>
                 <textarea id="contingutAngles" name="contingut" rows="10" disabled></textarea><br>
-                <label for="fecha">Data:</label>
-                <input type="text" id="data" name="data" disabled><br>
+
                 <input type="hidden" id="id" name="id">
-                <button type="button" onclick="guardarEntrada()">Guardar</button>
+                <button type="button" onclick="crearNovaEntrada()">Crear</button>
             </form>
         </article>
     </main>
@@ -52,8 +51,7 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="funcionsblogger.js"></script>
     <script>
-        const id = new URLSearchParams(window.location.search).get('id');
-        leerEntrada(id);
+
         // Escuchar el evento de escritura en el campo de texto original
         document.getElementById('contingut').addEventListener('input', function (event) {
             const texto = event.target.value;

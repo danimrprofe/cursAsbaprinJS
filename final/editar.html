@@ -5,19 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar</title>
-    <link rel="stylesheet" href="estilos.css">
-    <style>
-        nav {
-            background-color: #ccc;
-            padding: 10px;
-        }
+    <link rel="stylesheet" href="css/estilos.css">
 
-        nav a {
-            margin-right: 10px;
-            color: black;
-            text-decoration: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -54,10 +43,10 @@
     <script>
         const id = new URLSearchParams(window.location.search).get('id');
         leerEntrada(id);
-        // Escuchar el evento de escritura en el campo de texto original
+        // Afegim un listener d'event escriptura al camp de contingut en català
         document.getElementById('contingut').addEventListener('input', function (event) {
             const texto = event.target.value;
-            // Llamar a la función de traducción con el texto actual
+
             tradueix('ca', 'en', texto);
         });
     </script>

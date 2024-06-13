@@ -36,6 +36,21 @@ function llegirEntrades() {
             if (data.items && data.items.length > 0) {
                 taula = document.createElement('table');
 
+                const filaHeader = document.createElement('tr');
+                const tdNom = document.createElement('th');
+                tdNom.textContent = 'Títol';
+                const tdData = document.createElement('th');
+                tdData.textContent = 'Data de creació';
+                const tdEditar = document.createElement('th');
+                tdEditar.textContent = 'Editar';
+                const tdEsborrar = document.createElement('th');
+                tdEsborrar.textContent = 'Esborrar';
+                filaHeader.appendChild(tdNom);
+                filaHeader.appendChild(tdData);
+                filaHeader.appendChild(tdEditar);
+                filaHeader.appendChild(tdEsborrar);
+                taula.appendChild(filaHeader);
+
                 data.items.forEach(post => {
 
                     const fila = document.createElement('tr');
@@ -148,6 +163,7 @@ function tradueix(languageFrom, languageTo, text) {
                 document.getElementById('contingutAngles').value = textEnAngles;
             } else {
                 textEnCatala = data;
+
                 document.getElementById('contingut').value = textEnCatala;
             }
 
@@ -219,8 +235,7 @@ function crearNovaEntrada() {
         })
         .then(data => {
             alert('Entrada creada');
-            // Opcionalmente, redirigir a la página de entradas
-            window.location.href = 'entrades.html';
+            window.location.href = 'entrades.html'; // Redirigim a la pàgina d'entrades
         })
         .catch(error => {
             console.error('Error al crear l\'entrada:', error);
